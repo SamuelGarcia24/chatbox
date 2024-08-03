@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body,div,ul,li,a,h1,h2,h3,h4,p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --bg-color: #ee936c;
+    --chat-bg-color: #fff;
+    --dark-color: #f62;
+    --text-color: #444;
+    font-family: Montserrat;
+    background-color: var(--bg-color);
+}
+
+.chat {
+    max-width: clamp(300px, 50%, 700px);
+    background-color: var(--chat-bg-color);
+    margin: 50px auto;
+    border-radius: 25px;
+    padding: 0 0 1px 0;
+}
+
+.chat__profile-contain {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #4447;
+}
+
+.chat__profile-contain img {
+    max-width: 3.6rem;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.chat__name {
+    font-weight: 500;
+}
+
+.chat__message-contain {
+    background-color: var(--bg-color);
+    margin: 15px;
+    color: var(--chat-bg-color);
+    border-radius: 15px;
+    border-bottom-left-radius: 0;
+    padding: 8px;
+    font-size: .75rem;
+    max-width: clamp(300px, 80%, 900px);
+    position: relative;
+    width: fit-content;
+}
+
+.chat__message::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: var(--bg-color);
+    clip-path: polygon(50% 0, 0% 100%, 100% 50%);
+    bottom: -8.5px;
+    left: -8.5px;
+}
+
+.self {
+    margin-left: auto;
+    background-color: var(--dark-color);
+    border-radius: 15px;
+    border-bottom-right-radius: 0;
+}
+
+.self .chat__message::before {
+    background-color: var(--dark-color);
+    clip-path: polygon(50% 0%, 0 50%, 100% 100%);
+    left: auto;
+    right: -8.5px;
+    bottom: -8.5px
+}
